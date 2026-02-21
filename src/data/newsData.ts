@@ -3,18 +3,24 @@ import { NewsItem } from "@/types/api";
 export const newsData: NewsItem[] = [
   {
     id: 1,
+    date: '2026-03-01',
+    title: '【本科生院】关于组织2026年第十六届中国大学生服务外包创新创业大赛校内选拔赛的通知\n',
+    link: ''
+  },
+  {
+    id: 2,
     date: '2025-06-24',
     title: '【本科生院】关于举办 2025 年中国高校计算机大赛-人工智能创意赛校内选拔赛的通知',
     link: 'http://i.whut.edu.cn/xxtg/znbm/jwc/202506/t20250624_614953.shtml'
   },
   {
-    id: 2,
+    id: 3,
     date: '2025-07-07',
     title: '【本科生院】关于组织2025年全球校园人工智能算法精英大赛校内选拔赛的通知',
     link: 'http://i.whut.edu.cn/xxtg/znbm/jwc/202507/t20250707_615955.shtml'
   },
     {
-    id: 3,
+    id: 4,
     date: '2025-09-09',
     title: '【本科生院】关于组织2025年第22届全国大学生信息安全与对抗技术竞赛“智能安全赛”校内选拔赛的通知',
     link: 'http://i.whut.edu.cn/xxtg/znbm/jwc/202509/t20250909_617992.shtml'

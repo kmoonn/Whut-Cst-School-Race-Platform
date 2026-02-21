@@ -87,7 +87,7 @@ export default function Banner() {
                 key={competition.id}
                 className={`${styles.item} ${selectedCompetition.id === competition.id ? styles.active : ''}`}
                 onClick={() => setSelectedCompetition(competition)}
-                title={competition.name} // 添加完整名称作为提示
+                title={competition.name}
               >
                 {displayName}
               </div>
