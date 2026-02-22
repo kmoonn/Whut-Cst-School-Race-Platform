@@ -6,27 +6,8 @@ import type { CarouselProps } from 'antd'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import styles from './index.module.scss'
 import { competitionsData } from '@/data/competitionsData'
-import { bannerData } from '@/data/bannerData'
 import { getTimelineStatus, calculateProgress, canRegister, isRegisterNotStarted, isRegisterEnded } from '@/utils/dateUtils'
-import type { Competition, TimelinePhase } from '@/types/api'
-
-const CustomPrevArrow: React.FC<any> = (props) => {
-  const { className, onClick } = props
-  return (
-      <div className={`${className} ${styles.customArrow} ${styles.prevArrow}`} onClick={onClick}>
-        <LeftOutlined />
-      </div>
-  )
-}
-
-const CustomNextArrow: React.FC<any> = (props) => {
-  const { className, onClick } = props
-  return (
-      <div className={`${className} ${styles.customArrow} ${styles.nextArrow}`} onClick={onClick}>
-        <RightOutlined />
-      </div>
-  )
-}
+import type { Competition } from '@/types/api'
 
 const carouselSettings: CarouselProps = {
   autoplay: true,
@@ -40,34 +21,17 @@ const carouselSettings: CarouselProps = {
 export default function Banner() {
   const [selectedCompetition, setSelectedCompetition] = useState<Competition>(competitionsData[0])
 
-  const formatSubtitle = (subtitle: string) => {
-    return subtitle.split('\n').map((line, index) => (
-        <span key={index}>
-        {line}
-          <br />
-      </span>
-    ))
-  }
-
   return (
     <div className={styles.banner}>
       <Carousel
           {...carouselSettings as React.PropsWithChildren<CarouselProps>}
-          prevArrow={<CustomPrevArrow />}
-          nextArrow={<CustomNextArrow />}
       >
-        {bannerData.map((item, index) => (
+        {competitionsData.map((item, index) => (
             <div key={index}>
               <div
                   className={styles.slide}
                   style={{ backgroundImage: `url(${item.backgroundUrl})` }}
               >
-                <div className={styles.content}>
-                  <h1 className={styles.title}>
-                    {item.title}
-                    <span className={styles.subtitle}>{formatSubtitle(item.subtitle)}</span>
-                  </h1>
-                </div>
               </div>
             </div>
         ))}
@@ -187,7 +151,7 @@ export default function Banner() {
                           <path d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z" fill="currentColor"/>
                         </svg>
                       </>
-                  ) : isRegisterNotStarted(selectedCompetition.timeline) ? '报名未开始' : isRegisterEnded(selectedCompetition.timeline) ? '报名已截止' : '报名未开始'}
+                  ) : isRegisterNotStarted(selectedCompetition.timeline) ? '未开始' : isRegisterEnded(selectedCompetition.timeline) ? '已结束' : '未开始'}
                 </button>
               </div>
             </div>

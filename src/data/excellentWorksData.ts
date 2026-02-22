@@ -1,6 +1,6 @@
-import { ExhibitionWork } from "@/types/api";
+import { ExcellentWork } from "@/types/api";
 
-export const exhibitionData: ExhibitionWork[] = [
+export const excellentWorksData: ExcellentWork[] = [
   {
     id: 1,
     title: '基于人工智能的文档智能处理系统',

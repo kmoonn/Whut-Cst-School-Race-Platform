@@ -1,0 +1,385 @@
+.banner {
+  position: relative;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+}
+
+/* ========================
+   轮播区域
+======================== */
+.slide {
+  height: clamp(380px, 38vh, 580px);
+  background: url('/src/assets/logo.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ========================
+   Logo & Title
+======================== */
+.logo {
+  width: 52px;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 38px;
+  }
+}
+
+.logoImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.year {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+/* ========================
+   通用按钮系统
+======================== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.button--primary {
+  background: var(--primary-color);
+  color: white;
+
+  &:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.button--success {
+  background: #2c8b67;
+  color: white;
+
+  &:hover {
+    background: #1f6a4f;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.playButton {
+  @extend .button;
+  @extend .button--primary;
+}
+
+.schoolLink {
+  @extend .button;
+  @extend .button--primary;
+  text-decoration: none;
+}
+
+.officialLink {
+  @extend .button;
+  @extend .button--success;
+  text-decoration: none;
+}
+
+/* ========================
+   竞赛区域
+======================== */
+.competitions {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.2rem 1rem;
+
+  h2 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 1.8rem;
+    color: var(--text-primary);
+    font-weight: 600;
+
+    span {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-left: 0.8rem;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.item {
+  padding: 1.4rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+
+  &:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  &.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* ========================
+   信息卡片
+======================== */
+.competitionInfo {
+  margin-top: 1.8rem;
+}
+
+.infoCard {
+  background: white;
+  border-radius: 10px;
+  padding: 1.6rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.infoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+
+  h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin: 0;
+  }
+}
+
+.linkGroup {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem {
+  label {
+    color: var(--text-secondary);
+    margin-right: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  span {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+}
+
+/* ========================
+   时间轴
+======================== */
+.timeline {
+  margin-top: 1.5rem;
+}
+
+.timelineTrack {
+  position: relative;
+  padding: 10px 0;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #e8e8e8;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(
+                  90deg,
+                  var(--primary-color) 0%,
+                  #40a9ff 100%
+  );
+  transition: width 0.3s ease;
+}
+
+.timelinePoints {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.timelinePoint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+
+  &.completed .point {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+
+  &.current .point {
+    background-color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px var(--primary-light);
+  }
+}
+
+.point {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #d9d9d9;
+  background-color: white;
+  transition: all 0.25s ease;
+}
+
+.currentIndicator {
+  position: absolute;
+  top: -18px;
+  padding: 3px 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 10px;
+  font-size: 11px;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--primary-color);
+  }
+}
+
+/* ========================
+   报名按钮
+======================== */
+.registerButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+.registerButton {
+  @extend .button;
+  @extend .button--primary;
+  border-radius: 8px;
+
+  &:disabled {
+    background-color: #d9d9d9;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ========================
+   移动端优化
+======================== */
+@media (max-width: 768px) {
+  .content {
+    padding: 36px 1.2rem;
+  }
+
+  .linkGroup {
+    flex-direction: column;
+  }
+
+  .slide {
+    height: auto;
+    min-height: 48vh;
+  }
+
+  .timelineTrack {
+    padding: 32px 0;
+  }
+}

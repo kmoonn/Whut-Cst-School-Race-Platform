@@ -12,7 +12,7 @@ export default function News() {
       <h2 className="section-title">
         通知公告
         <span>News & Notification</span>
-        <Link href="/news" className="more">
+        <Link href="http://i.whut.edu.cn/" className="more">
           更多 &gt;
         </Link>
       </h2>

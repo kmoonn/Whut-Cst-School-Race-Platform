@@ -1,6 +1,3 @@
-/**
- * 获取时间线状态：已完成、当前、即将到来
- */
 export function getTimelineStatus(date: Date, nextDate?: Date): 'completed' | 'current' | 'upcoming' {
   const now = new Date();
   if (nextDate) {

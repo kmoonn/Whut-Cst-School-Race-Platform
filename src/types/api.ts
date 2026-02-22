@@ -1,9 +1,4 @@
-export interface Banner {
-    id: number;
-    title: string;
-    subtitle: string;
-    backgroundUrl: string;
-}
+import {excellentWorksData} from "@/data/excellentWorksData";
 
 export interface TimelinePhase {
     label: string;
@@ -13,6 +8,8 @@ export interface TimelinePhase {
 export interface Competition {
     id: number;
     name: string;
+    subtitle: string;
+    backgroundUrl: string;
     organizer: string;
     officialWebsite?: string;
     link?: string;
@@ -26,7 +23,7 @@ export interface NewsItem {
     link: string;
 }
 
-export interface ExhibitionWork {
+export interface ExcellentWork {
     id: number;
     title: string;
     description: string;

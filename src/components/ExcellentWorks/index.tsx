@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Card } from 'antd'
 import styles from './index.module.scss'
-import { exhibitionData } from '@/data/exhibitionData'
+import { excellentWorksData } from '@/data/excellentWorksData'
 
 const { Meta } = Card
 
@@ -20,7 +20,7 @@ export default function Exhibition() {
       </h2>
       
       <div className={styles.workGrid}>
-        {exhibitionData.map(work => (
+        {excellentWorksData.map(work => (
           <Link href={work.detailUrl || `/works/${work.id}`} key={work.id}>
             <Card
               hoverable

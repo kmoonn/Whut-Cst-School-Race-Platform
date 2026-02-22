@@ -1,20 +1,25 @@
 .footer {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(2, 37, 78, 0.9)), url('../../assets/footer.png');
+  background-image: linear-gradient(
+                  to right,
+                  rgba(0, 0, 0, 0.9),
+                  rgba(2, 37, 78, 0.95)
+  ),
+  url('../../assets/footer.png');
   background-size: cover;
   background-position: center;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 2rem 0 1rem;
-  margin-top: 10rem;
+  color: rgba(255, 255, 255, 0.85);
+
+  padding: 1.5rem 0 0.8rem;   // ↓ 缩小
+  margin-top: 6rem;           // ↓ 原来10rem过大
   position: relative;
-  
-  // 添加顶部装饰线
+
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 2px;              // ↓ 更细
     background: linear-gradient(to right, #1677ff, #4096ff, #69b1ff);
   }
 }
@@ -22,143 +27,105 @@
 .footerContent {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 1.2rem;                // ↓ 原 2rem
+  margin-bottom: 1rem;        // ↓ 原 1.5rem
 }
+
+/* ================= info ================= */
 
 .info {
   h3 {
     color: #fff;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    margin-bottom: 0.6rem;    // ↓
+    font-size: 1.05rem;       // ↓
     font-weight: 500;
-    position: relative;
-    padding-bottom: 0.4rem;
-    
-    // 添加标题下划线
+    padding-bottom: 0.3rem;
+
     &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
+      width: 30px;            // ↓
       height: 2px;
-      background-color: #1677ff;
     }
   }
 
   p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.35rem;   // ↓
+    font-size: 0.85rem;       // ↓
+    line-height: 1.5;         // 控制紧凑
     display: flex;
     align-items: center;
-    
-    // 添加小图标的样式占位
+
     &::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background-color: #1677ff;
-      border-radius: 50%;
-      margin-right: 10px;
+      width: 5px;
+      height: 5px;
+      margin-right: 8px;
     }
   }
 }
 
-// 社交图标样式
+/* ================= 社交图标 ================= */
+
 .socialIcons {
   display: flex;
-  gap: 12px;
-  margin-top: 0.8rem;
-  
+  gap: 8px;                   // ↓
+  margin-top: 0.5rem;
+
   a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 28px;              // ↓ 原32
+    height: 28px;
+    font-size: 14px;          // ↓
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+
     &:hover {
       background-color: #1677ff;
-      transform: translateY(-2px);
+      transform: translateY(-1px); // ↓ 动效减弱
     }
   }
 }
+
+/* ================= links ================= */
 
 .links {
   h3 {
-    color: #fff;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 0.4rem;
-    
-    // 添加标题下划线
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+    padding-bottom: 0.3rem;
+
     &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
+      width: 30px;
       height: 2px;
-      background-color: #1677ff;
     }
   }
 
   a {
-    display: block;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 0.5rem;
-    transition: all 0.3s ease;
-    padding-left: 12px;
-    position: relative;
-    font-size: 0.9rem;
-    
-    // 添加链接前的图标
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+    padding-left: 10px;
+
     &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 5px;
-      height: 5px;
-      background-color: #1677ff;
-      border-radius: 50%;
-      transition: all 0.3s ease;
+      width: 4px;
+      height: 4px;
     }
 
     &:hover {
-      color: #fff;
-      transform: translateX(3px);
-      
-      &::before {
-        background-color: #fff;
-      }
+      transform: translateX(2px);
     }
   }
 }
 
+/* ================= copyright ================= */
+
 .copyright {
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  
+  padding-top: 0.8rem;        // ↓
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+
   p {
-    margin-bottom: 0.3rem;
-    
+    margin-bottom: 0.2rem;
+
     &:last-child {
-      margin-bottom: 0;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
     }
   }
-} 
+}
